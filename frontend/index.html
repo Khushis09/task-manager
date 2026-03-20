@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Task Manager</h1>
+      <p class="summary" id="summary">Loading...</p>
+    </header>
+
+    <!-- Add task form -->
+    <form id="task-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <input
+            type="text"
+            id="title-input"
+            placeholder="Task title (required)"
+            autocomplete="off"
+          />
+          <span class="field-error" id="title-error"></span>
+        </div>
+        <input
+          type="text"
+          id="desc-input"
+          placeholder="Description (optional)"
+          autocomplete="off"
+        />
+        <button type="submit" class="btn btn-primary">Add Task</button>
+      </div>
+    </form>
+
+    <!-- Filter buttons -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="PENDING">Pending</button>
+      <button class="filter-btn" data-filter="COMPLETED">Completed</button>
+    </div>
+
+    <!-- Task list -->
+    <div id="task-list"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
